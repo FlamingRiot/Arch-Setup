@@ -1,0 +1,63 @@
+# Key binds
+loadkeys fr_CH
+
+# Wifi connection
+iwctl 
+station wlan0 connect <WIFI-NAME>
+
+# Create partitions
+lsblk # To obtain the disk to operate on
+cfdisk <DISK> # 100M(Boot) / 4G(Swap) / Left space (Storage)
+
+# Configure partitions
+mkfs.ext4 /dev/<Left space Partition> # Setup storage partition
+mkfs.fat -F 32 /dev/<100M Partition> # Setup boot partition
+mkswap /dev/<Swap partition> # Setup swap partition
+
+# Mount partitions
+mount /dev/<Left space partition> /mnt # /mnt is expected to be used for root directory mounting
+mkdir /mnt/boot/efi # Create boot directory
+mount /dev/<Boot partition> /mnt/boot/efi # Mount boot directory
+swapon /dev/<Swap partition> # Activate swap partition
+
+# Install base packages 
+pacstrap /mnt base linux linux-firmware sof-firmware base-devel grub efibootmgr nano networkmanager
+
+# Write disk config to fstab
+genfstab /mnt > /mnt/etc/fstab
+
+# Get into the system
+arch-chroot /mnt # Enters the mounted partition
+
+# Set timezone
+ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime
+hwclock --systohc
+
+# Generate locale
+nano /etc/locale.gen # Uncomment fr_CH
+locale-gen # Generate locale
+nano /etc/locale.conf # Write "LANG=fr_CH.UTF-8
+
+# Specify Hostname and root password
+nano /etc/hostname # Write chosen hostname
+passwd # Follow instructions
+
+# Create user and set
+useradd -m -G wheel -s /bin/bash <NAME> # Create user 
+passwd <NAME>
+EDITOR=nano visudo # Uncomment %wheel ALL=(ALL) NOPASSWD: ALL
+
+# Update 
+sudo pacman -Syu
+
+# Enable core services
+sudo systemctl enable NetworkManager
+
+# Setup bootloader (Grub)
+grub-install <DISK_NAME>
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# Reboot
+exit # Exit system
+umount -a # Unmount unused disks
+reboot
