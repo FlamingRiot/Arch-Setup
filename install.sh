@@ -52,3 +52,11 @@ echo "Installing and configuring hyprpaper..."
 sudo pacman -S hyprpaperw
 mkdir ~/.config/hypr/wallpapers
 cp wallpapers/YourName.jpg ~/.config/hypr/wallpapers
+
+
+# Copying configs
+echo "Copying configuration files..."
+cp -rf hyprland ../.config/hypr/hyprland
+cp -rf kitty ../.config/kitty
+cp -r wallpapers ../.config/hypr/wallpapers
+cp -rf waybar ../.config/waybar
