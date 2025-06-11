@@ -43,5 +43,12 @@ echo "Installing dolphin..."
 sudo pacman -S dolphin
 
 # Waybar and its dependencies
+echo "Installing waybar..."
 sudo pacman -S waybar
 sudo pacman -S ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
+
+# Hyprpaper 
+echo "Installing and configuring hyprpaper..."
+sudo pacman -S hyprpaperw
+mkdir ~/.config/hypr/wallpapers
+cp wallpapers/YourName.jpg ~/.config/hypr/wallpapers
