@@ -5,10 +5,16 @@ echo "Updating system..."
 sudo pacman -Syu --noconfirm
 sudo usermod -aG input,seat $USER # Some weird-ass command to enable peripheric detection
 
+# Nvidia pilotes installation
+sudo pacman -S nvidia nvidia-utils nvidia-settings
+echo "nvidia" | sudo tee /etc/modules-load.d/nvidia.conf
+sudo mkinitcpio -P
+sudo pacman -S nvidia-prime # Used for running apps on the Nvidia GPU
+
 # Hyprland installation
 echo "Installing hyprland..."
 sudo pacman -S hyprland wayland wayland-protocols xorg-xwayland kitty sddm git
-sudo systemctl enable sddm.service
+sudo systemctl enable sddm
 
 # AUR (yay) Installation
 echo "Installing yay..."
