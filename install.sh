@@ -64,3 +64,7 @@ cp -rf waybar ../.config/waybar
 # Copying bashrc configs
 cp -f .bashrc ../.bashrc
 cp ascii.txt ../.config/ascii.txt
+
+# Reboot system
+echo "Rebooting system..."
+reboot
