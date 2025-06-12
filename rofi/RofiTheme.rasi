@@ -1,0 +1,64 @@
+* {
+    background-color: #004e6616;
+    text-color: #bababa;
+    border: 0;
+    margin: 0px;
+    padding: 0px;
+    font: "Source Code Pro 10";
+}
+
+prompt {
+	text-color: #004e6616;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    fullscreen: false;
+    spacing: 0;
+    border: 1px;
+    border-color: #ffffffaa;
+    height: 300px;
+}
+
+inputbar{
+    padding: 30 15px;
+}
+
+listview {
+	scrollbar: true;
+	margin: 0 10px 0 30px;
+}
+
+scrollbar{
+	background-color: #004e6670;
+	handle-rounded-corners: true;
+}
+
+element{
+    	orientation: horizontal;
+    	spacing: 22px;
+	padding: 5px;
+}
+
+element selected {
+	background-color: #004e6670;
+	border: 1px;
+	margin: 10px;
+	border-color: #ffffffaa;
+}
+
+element-icon{
+    	size: 1.8em;
+}
+
+element-text{
+	vertical-align: 0.5;
+}
+
+entry{
+    placeholder: "Fuck Linux... joking aha";
+    cursor: pointer;
+}
+
+

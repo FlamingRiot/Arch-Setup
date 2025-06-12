@@ -1,0 +1,13 @@
+configuration {
+    font: "Source Code Pro 24";
+    show-icons: true;
+    location: 8;
+    fullscreen: false;
+    columns: 1;
+    lines: 5;
+    disable-history: false;
+    matching: "normal";
+    dpi: 96;
+}
+
+@theme "RofiTheme.rasi"

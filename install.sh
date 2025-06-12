@@ -60,6 +60,7 @@ cp -rf hyprland ../.config/hypr/hyprland
 cp -rf kitty ../.config/kitty
 cp -r wallpapers ../.config/hypr/wallpapers
 cp -rf waybar ../.config/waybar
+cp -rf rofi ../.config/rofi
 
 # Copying bashrc configs
 cp -f .bashrc ../.bashrc
