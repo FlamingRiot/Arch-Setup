@@ -29,19 +29,19 @@ sudo rm -rf yay
 
 # Brave Installation
 echo -e "\e[92mInstalling Brave...\e[m"
-curl -fsS https://dl.brave.com/install.sh | sh
+su "$SUDO_USER" -c "curl -fsS https://dl.brave.com/install.sh | sh"
 
 # Vscodium installation
 echo -e "\e[92mInstalling Vscodium...\e[m"
-yay -S --noconfirm --clean vscodium-bin
+su "$SUDO_USER" -c "yay -S --noconfirm vscodium-bin"
 
 # Emojis
 echo -e "\e[92mInstalling emojis...\e[m"
-yay -S --noconfirm --clean ttf-twemoji
+su "$SUDO_USER" -c "yay -S --noconfirm ttf-twemoji"
 
 # Rofi (fixed wayland version)
 echo -e "\e[92mInstalling rofi...\e[m"
-yay -S --noconfirm --clean rofi-lbonn-wayland 
+su "$SUDO_USER" -c "yay -S --noconfirm rofi-lbonn-wayland" 
 
 # Dolphin file explorer
 echo -e "\e[92mInstalling dolphin...\e[m"
