@@ -7,14 +7,14 @@ sudo usermod -aG input,seat $USER # Some weird-ass command to enable peripheric 
 
 # Nvidia pilotes installation
 echo -e "\e[92mInstalling Nvidia pilots...\e[m"
-sudo pacman -Sy nvidia nvidia-utils nvidia-settings
+sudo pacman -Sy --noconfirm nvidia nvidia-utils nvidia-settings
 echo "nvidia" | sudo tee /etc/modules-load.d/nvidia.conf
 sudo mkinitcpio -P
-sudo pacman -Sy nvidia-prime # Used for running apps on the Nvidia GPU
+sudo pacman -Sy --noconfirm nvidia-prime # Used for running apps on the Nvidia GPU
 
 # Hyprland installation
 echo -e "\e[92mInstalling hyprland...\e[m"
-sudo pacman -Sy hyprland wayland wayland-protocols xorg-xwayland kitty sddm git
+sudo pacman -Sy --noconfirm hyprland wayland wayland-protocols xorg-xwayland kitty sddm git
 sudo systemctl enable sddm
 
 # AUR (yay) Installation
@@ -42,16 +42,16 @@ yay -S --noconfirm --clean rofi-lbonn-wayland
 
 # Dolphin file explorer
 echo -e "\e[92mInstalling dolphin...\e[m"
-sudo pacman -Sy dolphin
+sudo pacman -Sy --noconfirm dolphin
 
 # Waybar and its dependencies
 echo -e "\e[92mInstalling waybar...\e[m"
-sudo pacman -Sy waybar
-sudo pacman -Sy ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
+sudo pacman -Sy --noconfirm waybar
+sudo pacman -Sy --noconfirm ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
 
 # Hyprpaper 
 echo -e "\e[92mInstalling and configuring hyprpaper...\e[m"
-sudo pacman -Sy hyprpaper
+sudo pacman -Sy --noconfirm hyprpaper
 mkdir ~/.config/hypr/wallpapers
 cp wallpapers/YourName.jpg ~/.config/hypr/wallpapers
 
