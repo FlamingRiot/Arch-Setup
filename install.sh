@@ -51,8 +51,8 @@ sudo pacman -Sy --noconfirm ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
 # Hyprpaper 
 echo -e "\e[92mInstalling and configuring hyprpaper...\e[m"
 sudo pacman -Sy --noconfirm hyprpaper
-mkdir ~/.config/hypr/wallpapers
-cp wallpapers/YourName.jpg ~/.config/hypr/wallpapers
+mkdir ../.config/hypr/wallpapers
+cp wallpapers/YourName.jpg ../.config/hypr/wallpapers
 
 
 # Copying configs
@@ -66,7 +66,3 @@ cp -rf rofi ../.config/rofi
 # Copying bashrc configs
 cp -f .bashrc ../.bashrc
 cp ascii.txt ../.config/ascii.txt
-
-# Reboot system
-echo -e "\e[92mRebooting system...\e[m"
-reboot
