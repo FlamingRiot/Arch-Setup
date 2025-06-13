@@ -22,6 +22,7 @@ echo -e "\e[92mInstalling yay...\e[m"
 git clone https://aur.archlinux.org/yay.git
 cd yay
 su - "$SUDO_USER" -c "makepkg -si"
+cd ..
 
 # Brave Installation
 echo -e "\e[92mInstalling Brave...\e[m"
@@ -51,9 +52,7 @@ sudo pacman -Sy --noconfirm ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
 # Hyprpaper 
 echo -e "\e[92mInstalling and configuring hyprpaper...\e[m"
 sudo pacman -Sy --noconfirm hyprpaper
-mkdir ../.config/hypr/wallpapers
-cp wallpapers/YourName.jpg ../.config/hypr/wallpapers
-
+cp -rf wallpapers ../.config/hypr/wallpapers
 
 # Copying configs
 echo -e "\e[92mCopying configuration files...\e[m"
