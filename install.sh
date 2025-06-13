@@ -19,7 +19,6 @@ sudo systemctl enable sddm
 
 # AUR (yay) Installation
 echo -e "\e[92mInstalling yay...\e[m"
-exit 
 git clone https://aur.archlinux.org/yay.git
 cd yay
 su - "$SUDO_USER" -c "makepkg -si"
