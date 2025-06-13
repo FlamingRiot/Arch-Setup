@@ -19,10 +19,13 @@ sudo systemctl enable sddm
 
 # AUR (yay) Installation
 echo -e "\e[92mInstalling yay...\e[m"
-git clone https://aur.archlinux.org/yay.git
+sudo pacman -Sy --noconfirm go
+su "$SUDO_USER" -c "git clone https://aur.archlinux.org/yay.git"
 cd yay
-su - "$SUDO_USER" -c "makepkg -si"
+su "$SUDO_USER" -c "makepkg"
+sudo pacman -U --noconfirm $(ls -t *.pkg.tar.zst | head -n 2)
 cd ..
+sudo rm -rf yay
 
 # Brave Installation
 echo -e "\e[92mInstalling Brave...\e[m"
