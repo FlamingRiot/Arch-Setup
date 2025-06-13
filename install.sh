@@ -21,10 +21,8 @@ sudo systemctl enable sddm
 echo -e "\e[92mInstalling yay...\e[m"
 sudo pacman -Sy --noconfirm go
 su "$SUDO_USER" -c "git clone https://aur.archlinux.org/yay.git"
-cd yay
 su "$SUDO_USER" -c "makepkg"
 sudo pacman -U --noconfirm $(ls -t *.pkg.tar.zst | head -n 2)
-cd ..
 sudo rm -rf yay
 
 # Brave Installation
@@ -59,7 +57,7 @@ cp -rf wallpapers ../.config/hypr/wallpapers
 
 # Copying configs
 echo -e "\e[92mCopying configuration files...\e[m"
-cp -rf hyprland ../.config/hypr
+cp -rf hypr ../.config
 cp -rf kitty ../.config
 cp -rf wallpapers ../.config/hypr
 cp -rf waybar ../.config
