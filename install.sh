@@ -59,11 +59,11 @@ cp -rf wallpapers ../.config/hypr/wallpapers
 
 # Copying configs
 echo -e "\e[92mCopying configuration files...\e[m"
-cp -rf hyprland ../.config/hypr/hyprland
-cp -rf kitty ../.config/kitty
-cp -rf wallpapers ../.config/hypr/wallpapers
-cp -rf waybar ../.config/waybar
-cp -rf rofi ../.config/rofi
+cp -rf hyprland ../.config/hypr
+cp -rf kitty ../.config
+cp -rf wallpapers ../.config/hypr
+cp -rf waybar ../.config
+sudo cp -rf rofi ../.config
 
 # Copying bashrc configs
 cp -f .bashrc ../.bashrc
