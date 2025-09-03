@@ -1,5 +1,7 @@
-cp -f hyprland/hyprland.conf ../.config/hypr/hyprland.conf
-cp -f hyprland/hyprpaper.conf ../.config/hypr/hyprpaper.conf
+# Copy Hyprland ecosystem configuration files
+cp -rf hypr ../.config
+
+# Copy other app configurations
 cp -f kitty/kitty.conf ../.config/kitty/kitty.conf
 cp -rf waybar ../.config
 cp -rf rofi ../.config/rofi
