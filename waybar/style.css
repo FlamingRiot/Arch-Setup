@@ -1,100 +1,78 @@
+/* @import "$HOME/.config/colors/colors.css" */
+@import "../colors/colors.css";
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "Ubuntu Nerd Font";
+    font-family: "JetBrainsMono Nerd Font";
     font-size: 13px;
+    background-color: transparent;
+    border-radius: 5px;
     min-height: 0;
 }
 
-window#waybar {
-    background: transparent;
-    color: white;
-}
+/* Workspaces configuration */
 
-#window {
-    font-weight: bold;
-    font-family: "Ubuntu";
-}
-/*
 #workspaces {
-    padding: 0 5px;
+    margin: 1px 0;
 }
-*/
 
 #workspaces button {
+    color: @foreground;
+    border: none;
     padding: 0 5px;
-    background: transparent;
-    color: white;
-    border-top: 2px solid transparent;
 }
 
-#workspaces button.focused {
-    color: #c9545d;
-    border-top: 2px solid #c9545d;
+#workspaces button:hover {
+    transition: none;
+    font-weight: bold;
 }
 
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
-}
-
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
-    padding: 0 3px;
+#workspaces button.active {
+    border: 2px solid @foreground;
+    padding: 0 8px;
     margin: 0 2px;
 }
 
+#workspaces button.urgent {
+    color: @red;
+    padding: 0 8px;
+}
+
+#custom-power,
+#tray,
+#bluetooth,
+#network,
+#battery,
+#pulseaudio,
 #clock {
-    font-weight: bold;
+    color: @foreground;
+    margin: 1px 0;
+    padding: 0 10px;
 }
 
-#battery {
-}
-
-#battery icon {
-    color: red;
-}
-
-#battery.charging {
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
-
-#battery.warning:not(.charging) {
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#cpu {
-}
-
-#memory {
+#bluetooth {
+    font-size: 14px;
+    color: @blue;
 }
 
 #network {
+    color: @foreground;
 }
 
-#network.disconnected {
-    background: #f53c3c;
+#battery {
+    color: @yellow;
 }
 
 #pulseaudio {
+    color: @orange;
 }
 
-#pulseaudio.muted {
+#clock {
+    margin-right: 10px;
+    color: @foreground;
 }
 
-#custom-spotify {
-    color: rgb(102, 220, 105);
-}
-
-#tray {
+#custom-power {
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 0px 10px 0 15px;
 }
