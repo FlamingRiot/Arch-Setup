@@ -5,6 +5,13 @@
 -- _| || | | | ||  __/ |  | || (_| | (_|  __/
 -- \___/_| |_|\__\___|_|  |_| \__,_|\___\___|
 
+-- unscale XWayland
+hl.config({
+  xwayland = {
+    force_zero_scaling = true
+  }
+})
+
 hl.config({
     -- General looks --
     general = {

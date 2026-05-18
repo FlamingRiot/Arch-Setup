@@ -60,12 +60,6 @@ require("conf/input")
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
-hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "auto",
-})
 
 require("conf/binds")
 
