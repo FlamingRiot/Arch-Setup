@@ -17,6 +17,13 @@ hl.window_rule({
     size = {"(monitor_w*0.6)", "(monitor_h*0.6)"}
 })
 
+hl.window_rule({
+	name = "graphic_dev_windows",
+	match = {
+		class = ""
+	},
+	float = true
+})
 -- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({
